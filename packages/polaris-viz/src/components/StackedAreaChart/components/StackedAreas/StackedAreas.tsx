@@ -88,6 +88,7 @@ export function StackedAreas({
       {stackedValues.map((data, index) => {
         const dataIsValidForAnimation =
           !previousStackedValues ||
+          !previousStackedValues[index] ||
           data.length === previousStackedValues[index].length;
 
         const AreaComponent = dataIsValidForAnimation ? AnimatedArea : Area;
